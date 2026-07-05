@@ -34,10 +34,14 @@ models:
     # Config indicated by + and applies to all files under models/example/
     landing:
       +materialized: table
-      schema: landing
+      +schema: landing
     intermediate:
       +materialized: table
-      schema: intermediate
+      +schema: intermediate
     data_mart:
       +materialized: table
-      schema: data_mart
+      +schema: data_mart
+
+seeds:
+  chessdotcom:
+    +schema: landing
