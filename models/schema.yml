@@ -33,7 +33,7 @@ models:
         description: "Username of the player using the white pieces."
         tests:
           - not_null
-      - name: WHITE_ELO
+      - name: WHITE_PLAYER_ELO
         description: "Elo rating of the white player at the time of the match."
         tests:
           - not_null
@@ -41,7 +41,7 @@ models:
         description: "Username of the player using the black pieces."
         tests:
           - not_null
-      - name: BLACK_ELO
+      - name: BLACK_PLAYER_ELO
         description: "Elo rating of the black player at the time of the match."
         tests:
           - not_null
