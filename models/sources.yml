@@ -3,19 +3,21 @@ version: 2
 sources:
   - name: chessdotcom
     description: "This source contains the raw data from the Chess.com API."
+    database: chess
+    schema: staging
     tables:
       - name: raw_raw_chess_matches
         description: "This table contains the raw data from the Chess.com API, including information about chess matches."
         tests:
           - unique:
-              column_name: game_id
+              column_name: GAME_ID
           - not_null:
-              column_name: game_id
+              column_name: GAME_ID
         columns:
-          - name: game_id
+          - name: GAME_ID
             description: "The unique identifier for each chess match."
-          - name: chess_match
+          - name: CHESS_MATCH
             description: "The chess match data in STRING format."
-          - name: fetched_at
+          - name: FETCHES_AT
             description: "The timestamp when the data was fetched from S3 API."
             

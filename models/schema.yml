@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: raw_chess_matches
+    description: "This model contains the data from Chess API after applying regex to extract the relevant fields from the CHESS_MATCH column in the raw_raw_chess_matches table."
+    columns:
+      - name: GAME_ID
+        description: "Unique identifier for the chess match."
+        tests:
+          - unique
+          - not_null
+      - name: GAME_TYPE_SECS
+        description: "Time control value extracted from the PGN metadata."
+        tests:
+          - not_null
+      - name: START_DATE_UTC
+        description: "UTC date when the match started."
+        tests:
+          - not_null
+      - name: START_TIME_UTC
+        description: "UTC time when the match started."
+        tests:
+          - not_null
+      - name: END_DATE_UTC
+        description: "UTC date when the match ended."
+        tests:
+          - not_null
+      - name: END_TIME_UTC
+        description: "UTC time when the match ended."
+        tests:
+          - not_null
+      - name: WHITE_PLAYER
+        description: "Username of the player using the white pieces."
+        tests:
+          - not_null
+      - name: WHITE_PLAYER_ELO
+        description: "Elo rating of the white player at the time of the match."
+        tests:
+          - not_null
+      - name: BLACK_PLAYER
+        description: "Username of the player using the black pieces."
+        tests:
+          - not_null
+      - name: BLACK_PLAYER_ELO
+        description: "Elo rating of the black player at the time of the match."
+        tests:
+          - not_null
+      - name: GAME_RESULT
+        description: "Final result of the match in PGN result notation."
+        tests:
+          - not_null
+      - name: TERMINATION
+        description: "Normalized termination reason extracted from the PGN termination metadata."
+        tests:
+          - not_null
+      - name: ECO_CODE
+        description: "Encyclopaedia of Chess Openings code for the opening played."
+      - name: ECO_URL
+        description: "Chess.com ECO URL for the opening played."
+      - name: GAME_URL
+        description: "Chess.com URL for the match."
+        tests:
+          - not_null
+      - name: CHESS_MATCH
+        description: "Move text from the PGN record."
+        tests:
+          - not_null
+
+    
